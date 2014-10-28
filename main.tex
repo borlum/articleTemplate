@@ -1,0 +1,77 @@
+\input{preamble.tex}
+
+%-------------------------------------------------------------------------------
+%	TITLE SECTION
+%-------------------------------------------------------------------------------
+
+% Allows custom title configuration
+\usepackage{titling}
+
+% Defines the gold horizontal rule around the title
+\newcommand{\HorRule}{\color{Silver} \rule{\linewidth}{1pt}}
+
+% Horizontal rule before the title
+\pretitle{
+    \vspace{-30pt}
+    \begin{flushleft} \HorRule 
+    \fontsize{50}{50} \usefont{OT1}{phv}{b}{n} 
+    \color{SlateGrey} \selectfont
+}
+
+% Your article title
+\title{Article Title}
+
+% Whitespace under the title
+\posttitle{\par\end{flushleft}\vskip 0.5em}
+
+% Author font configuration
+\preauthor{
+    \begin{flushleft} \large 
+    \lineskip 0.5em \usefont{OT1}{phv}{b}{sl} 
+    \color{LightSlateGrey}
+}
+
+% Your name
+\author{Joakim B{\o}rlum Petersen, }
+
+% Configuration for the institution name
+\postauthor{\footnotesize \usefont{OT1}{phv}{m}{sl} \color{Black}
+Aalborg University
+
+% Horizontal rule after the title
+\par\end{flushleft}\HorRule}
+
+% Add a date here if you would like one to appear underneath the title block
+\date{}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+% Enabling the custom headers/footers for the first page
+\thispagestyle{fancy} 
+
+%-------------------------------------------------------------------------------
+%   ABSTRACT
+%-------------------------------------------------------------------------------
+
+\input{content/abstract.tex}
+
+%-------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%-------------------------------------------------------------------------------
+
+\input{content/foobar.tex}
+
+%-------------------------------------------------------------------------------
+%   REFERENCES
+%-------------------------------------------------------------------------------
+
+\printbibliography
+
+%-------------------------------------------------------------------------------
+
+\end{document}

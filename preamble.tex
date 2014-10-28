@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% @roevhat article template
+%
+% This template has been remixed from an article template found here:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+% A4 paper and 11pt font size
+\documentclass[DIV=calc, paper=a4, fontsize=11pt, twocolumn]{scrartcl}
+% Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{lipsum}
+% English language/hyphenation
+\usepackage[english]{babel}
+
+%References / bibliography setup
+\usepackage[backend=biber, url=true, doi=true, style=numeric, sorting=none]{biblatex}
+\bibliography{references/ref.bib}
+
+% Better typography
+\usepackage[protrusion=true,expansion=true]{microtype}
+% Math packages
+\usepackage{amsmath,amsfonts,amsthm}
+% Enabling colors by their 'svgnames'
+\usepackage[svgnames]{xcolor}
+% Custom captions under/above floats in tables or figures
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+% Horizontal rules in tables
+\usepackage{booktabs}
+% Custom font sizes - used for the initial letter in the document
+\usepackage{fix-cm}
+
+% Enables custom section titles
+\usepackage{sectsty}
+% Change the font of all section commands
+\allsectionsfont{\usefont{OT1}{phv}{b}{n}}
+
+% Needed to define custom headers/footers
+\usepackage{fancyhdr}
+% Enables the custom headers/footers
+\pagestyle{fancy}
+% Used to determine the number of pages in the document (for "Page X of Total")
+\usepackage{lastpage}
+
+% Headers - all currently empty
+\lhead{}
+\chead{}
+\rhead{}
+
+% Footers
+\lfoot{}
+\cfoot{}
+% "Page 1 of 2"
+\rfoot{\footnotesize Page \thepage\ of \pageref{LastPage}}
+
+% No header rule
+\renewcommand{\headrulewidth}{0.0pt}
+% Thin footer rule
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Package to accentuate the first letter of the text
+\usepackage{lettrine}
+% Defines the command and style for the first letter
+\newcommand{\initial}[1]{
+\lettrine[lines=3,lhang=0.3,nindent=0em]{
+\color{Gray}
+{\textsf{#1}}}{}}
+
+%-------------------------------------------------------------------------------
+%   MACROS
+%-------------------------------------------------------------------------------
+
+% Referencing figures, sections, tables, equations
+\newcommand{\figref}[1]{\textbf{Figure~\ref{#1}}}
+\newcommand{\secref}[1]{\textbf{Section~\ref{#1}}}
+\newcommand{\tableref}[1]{\textbf{Table~\ref{#1}}}
+\renewcommand{\eqref}[1]{\textbf{Equation~(\ref{#1})}}
+% Hans Ebert style units
+\newcommand{\unit}[1]{\put(400,0){$\hfill\left[\: #1 \:\right]$}}
