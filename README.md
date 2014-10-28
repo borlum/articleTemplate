@@ -1,0 +1,1 @@
+#LaTeX Article Template for Scientific Writings
